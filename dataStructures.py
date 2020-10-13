@@ -22,3 +22,17 @@ def randomName():
 
 def randomBurgers():
     return random.randint(1, 20)
+
+
+# Queue
+burgerQueue = []
+
+# Create Queue from randomName()
+for num in range(0, 100):
+    burgerQueue.append(randomName())
+
+# Customers
+customers = {}
+
+# Create Customers from Quere
+# for person in burgerQueue:
