@@ -35,4 +35,8 @@ for num in range(0, 100):
 customers = {}
 
 # Create Customers from Quere
-# for person in burgerQueue:
+for person in burgerQueue:
+    if person not in customers:
+        customers[person] = 0
+
+print(customers)
