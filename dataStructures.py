@@ -31,23 +31,23 @@ burgerQueue = []
 for num in range(0, 100):
 	burgerQueue.append(randomName())
 	
-# Customers
-customers = {}
+# Customers (dictionary)
+dictCustomers = {}
 
 # Create Customers from Quere
 for person in burgerQueue:
         # Initialize Person if they are not in customers
-	if person not in customers:
-		customers[person] = 0
+	if person not in dictCustomers:
+		dictCustomers[person] = 0
 	
-	customers[person] += randomBurgers()
+	dictCustomers[person] += randomBurgers()
 
 # Clear queue
 burgerQueue.clear()
 
-listSortedCustomers = sorted(customers.items(), key=lambda x:x[1], reverse=True)
+listSortedCustomers = sorted(dictCustomers.items(), key=lambda x:x[1], reverse=True)
 
 # Print final list
 
 for customer in listSortedCustomers:
-	print(f'{customer[0]: <30}{customer[1]}')
+	print(f'{customer[0].ljust(19)}{customer[1]}')
