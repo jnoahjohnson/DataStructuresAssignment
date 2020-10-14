@@ -34,16 +34,21 @@ for num in range(0, 100):
 # Customers (dictionary)
 dictCustomers = {}
 
-# Create Customers from Quere
-for person in burgerQueue:
-    # Initialize Person if they are not in customers
-    if person not in dictCustomers:
-        dictCustomers[person] = 0
+# Iterate through queue
+for iCount in range(0, len(burgerQueue)):
+    # Variable to store customer at front of queue
+    customerName = burgerQueue[0]
 
-    dictCustomers[person] += randomBurgers()
+    # Check if customer has already been added and initialize if not
+    if customerName not in dictCustomers:
+        dictCustomers[customerName] = 0
 
-# Clear queue
-burgerQueue.clear()
+    # Add burger count to customer
+    dictCustomers[customerName] += randomBurgers()
+
+    # Get rid of customer from queue
+    burgerQueue.pop(0)
+
 
 listSortedCustomers = sorted(
     dictCustomers.items(), key=lambda x: x[1], reverse=True)
